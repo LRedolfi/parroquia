@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root{
+    --amarillo:#FFC93C;
+}
+
+/* Estilos globales*/
+body{
+    font-family: 'DM Sans', sans-serif;
+}
+
+/*Estilos de utilidad*/
+.contenedor{
+    width: 70rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.titulo, h1{
+    font-size: 4rem;
+}
+
+.fondo-amarillo{
+    background-color: var(--amarillo);
+}
+.centrar-vertical-y-horizontal{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.subrayado-amarillo{
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.subrayado-amarillo::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 0.56rem;
+    background-color: var(--amarillo);
+    width: 100%;
+    z-index: -1;
+}
+
+/*Estilos de componentes*/
+.texto-e-imagen{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+    text-align: center;
+    padding: 4.25rem 2rem;
+}
+
+.texto-e-imagen .contenido-principal{
+    flex-grow: 1;
+    display: grid;
+    gap: 3em;
+    grid-template-rows: auto minmax(0,1fr) auto;
+    justify-items: center;
+}
+
+@media(min-width:60rem){
+    .texto-e-imagen .contenido-principal{
+        justify-items: start;
+        text-align: left;
+    }
+    .texto-e-imagen{
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
