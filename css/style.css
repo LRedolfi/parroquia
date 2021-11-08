@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
 :root{
-    --amarillo:#FFC93C;
+    --celeste:#30c5eb;
 }
 
 /* Estilos globales*/
@@ -11,7 +19,7 @@ body{
 
 /*Estilos de utilidad*/
 .contenedor{
-    width: 70rem;
+    width: 60rem;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -20,8 +28,17 @@ body{
     font-size: 4rem;
 }
 
-.fondo-amarillo{
-    background-color: var(--amarillo);
+.subtitulo{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.padding-seccion{
+    padding: 4.25rem 2rem;    
+}
+
+.fondo-celeste{
+    background-color: var(--celeste);
 }
 .centrar-vertical-y-horizontal{
     display: flex;
@@ -29,19 +46,19 @@ body{
     justify-items: center;
 }
 
-.subrayado-amarillo{
+.subrayado-celeste{
     position: relative;
     display: inline-block;
     z-index: 1;
 }
 
-.subrayado-amarillo::before{
+.subrayado-celeste::before{
     position: absolute;
     content: '';
     bottom: 0;
     left: 0;
     height: 0.56rem;
-    background-color: var(--amarillo);
+    background-color: var(--celeste);
     width: 100%;
     z-index: -1;
 }
@@ -53,7 +70,21 @@ body{
     gap: 3em;
     align-items: center;
     text-align: center;
-    padding: 4.25rem 2rem;
+}
+
+.avatar{
+    border-radius: 50%;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.texto-e-imagen .acciones{
+    margin-bottom: 4.25em;
+}
+
+.texto-e-imagen.portada{
+    padding-bottom: 0;
 }
 
 .texto-e-imagen .contenido-principal{
@@ -65,6 +96,10 @@ body{
 }
 
 @media(min-width:60rem){
+    .texto-e-imagen .texto{
+        flex: 1;
+        text-align: left;
+    }
     .texto-e-imagen .contenido-principal{
         justify-items: start;
         text-align: left;
