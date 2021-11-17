@@ -25,11 +25,11 @@ body{
 }
 
 .titulo, h1{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .subtitulo{
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -72,11 +72,15 @@ body{
     text-align: center;
 }
 
+.imagenes img {
+    border-radius: 5%;
+}
+
 .avatar{
     border-radius: 50%;
     width: 300px;
     height: 400px;
-    object-fit: cover;
+    object-fit: cover;    
 }
 
 .texto-e-imagen .acciones{
@@ -96,6 +100,38 @@ body{
 }
 
 @media(min-width:60rem){
+    .elemento-con-imagenes{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+    }
+
+    .elemento-con-imagenes:nth-child(even){
+        flex-direction: row-reverse;
+    }
+
+    .elemento-con-imagenes .texto{
+        flex: 1;
+        max-width: 100%;
+        align-self: center;
+    }
+
+    .elemento-con-imagenes .imagenes{
+        flex: 0 0 50%;
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-rows: repeat(2,minmax(0,1fr));
+        grid-template-areas: ". imagen-derecha""imagen-izquierda .";
+    }
+
+    .elemento-con-imagenes .imagenes img:first-child{
+        grid-area: imagen-derecha;
+    }
+
+    .elemento-con-imagenes .imagenes img:last-child{
+        grid-area: imagen-izquierda;
+    }
+
     .texto-e-imagen .texto{
         flex: 1;
         text-align: left;
