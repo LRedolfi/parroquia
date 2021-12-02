@@ -28,9 +28,18 @@ body{
     font-size: 3rem;
 }
 
+.fondo-gris{
+    background-color: #b0b0b0;
+}
+
 .subtitulo{
     font-size: 2em;
     font-weight: bold;
+}
+
+.grilla-principal{
+    display: grid;
+    grid-template-columns: repeat(12,minmax(0,1fr));
 }
 
 .padding-seccion{
@@ -99,7 +108,34 @@ body{
     justify-items: center;
 }
 
+.items{
+    gap: 3em;
+}
+
+.items header{
+    grid-column: span 12;
+}
+
+.items .item{
+    grid-column: span 12;
+    background-color: white;
+}
+
+.item header{
+    padding: 1.5em 2em;
+}
+
+.item .fondo{
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-position: center;
+    background-size: cover;
+}
+
 @media(min-width:60rem){
+    .items .item{
+        grid-column: span 5;
+    }
     .elemento-con-imagenes{
         display: flex;
         flex-wrap: wrap;
